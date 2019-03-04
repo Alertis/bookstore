@@ -1,0 +1,56 @@
+[
+    {
+      "title": "1984",
+      "author": "H.G. Wells",
+      "image": "images/book_1984.jpg",
+      "publisher": "Can Yayınları"
+    },
+    {
+      "title": "Na Tropie Nieznanych",
+      "author": "Bernard Heuvelmans",
+      "image": "images/book_na_tropie.jpg",
+      "publisher": "Okyanus Yayınları"
+    },
+    {
+      "title": "Stary Czlowiek I Morze",
+      "author": "Ernest Hemingway",
+      "image": "images/book_stary.jpg",
+      "publisher": "Delta Kültür Yayınları"
+    },
+    {
+      "title": "The Catcher In The Rye",
+      "author": "J.D. Salinger",
+      "image": "images/book_catcher.jpg",
+      "publisher": "Okyanus Yayınları"
+    },
+    {
+      "title": "Moby Dick",
+      "author": "Herman Melville",
+      "image": "images/book_moby_dick.jpg",
+      "publisher": "Delta Kültür Yayınları"
+    },
+    {
+      "title": "Hobbit",
+      "author": "J.R.R Tolkien",
+      "image": "images/book_hobbit.jpg",
+      "publisher": "Can Yayınları"
+    },
+    {
+      "title": "Wojna Swiatow",
+      "author": "H.G. Wells",
+      "image": "images/book_wojna.jpg",
+      "publisher": "Can Yayınları"
+    },
+    {
+      "title": "Zegar Pomaranczowy Pracz",
+      "author": "Anthony Burgess",
+      "image": "images/book_zegar.jpg",
+      "publisher": "Okyanus Yayınları"
+    },
+    {
+      "title": "Ksiega Dzungli",
+      "author": "Rudyard Kipling",
+      "image": "images/book_ksiega.jpg",
+      "publisher": "Okyanus Yayınları"
+    }
+  ]
