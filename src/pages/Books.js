@@ -6,30 +6,44 @@ import Book from '../component/Book'
 
 class Books extends Component{
     state={
-        books:[]
+        books:[],
+        search:""
     }
+    
     componentDidMount(){
         this.props.bookList();
     }
     componentWillReceiveProps(nextState){
        nextState.books.length !== 0 && nextState.books.books.then((v)=>{
-           this.setState({books:v})
+           this.setState({books:v.books})
        })
     }
+    search= () => {
+        this.props.bookList();
+        setTimeout(() => {
+            var updatedBooks=this.state.books;
+            updatedBooks=updatedBooks.filter((e) => e.title.toUpperCase().includes(this.state.search.toUpperCase()))
+            this.setState({books:updatedBooks})
+        },1000) 
+    }
+    handleChange=(e)=>{
+        this.setState({ [e.target.name]:e.target.value });
+        this.search();
+    }
     render(){
-        console.log(this.state.books)
+        
         return(
             <Segment>
                 <Grid >
                     <Grid.Column width={14}>
-                        <Input icon='search' placeholder='Search...' style={{width:'100%'}} />
+                        <Input icon='search' placeholder='Search...' name="search" onChange={this.handleChange} style={{width:'100%'}} />
                     </Grid.Column>
                     <Grid.Column  width={2} >
-                        <Button basic color="blue">Create</Button>
+                        <Button basic color="blue" onClick={this.search}>Create</Button>
                     </Grid.Column>
                 </Grid>
                 <Card.Group itemsPerRow={4}>
-                    {this.state.books.length !== 0 && this.state.books.books.map(item => (
+                    {this.state.books.length !== 0 && this.state.books.map(item => (
                         <Book book={item} />
                     ))}
                 </Card.Group>
