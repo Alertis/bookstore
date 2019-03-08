@@ -1,7 +1,7 @@
 {
   "name": "bookstore",
   "version": "0.1.0",
-  "homepage": "https://alertis.github.io/bookstore/",
+  "homepage": "http://alertis.github.io/bookstore/",
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
