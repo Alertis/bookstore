@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
-import { Container,Card, Input, Button, Segment, Grid } from 'semantic-ui-react';
-import {bookList} from '../actions/books';
+import { Card, Input, Button, Segment, Grid } from 'semantic-ui-react';
+import {bookList,createBook} from '../actions/books';
 import { connect } from 'react-redux';
 import Book from '../component/Book'
+import CreateBook from '../component/CreateBook';
+
 
 class Books extends Component{
     state={
         books:[],
-        search:""
+        search:"",
+        open:false,
+        newBook:{}
+    }
+    saveBook=()=>{
+        this.state.books.push(this.state.newBook)
+        this.createClick();
+    }
+    createClick=()=>{
+        this.setState({open:!this.state.open})
     }
     
     componentDidMount(){
@@ -39,7 +50,7 @@ class Books extends Component{
                         <Input icon='search' placeholder='Search...' name="search" onChange={this.handleChange} style={{width:'100%'}} />
                     </Grid.Column>
                     <Grid.Column  width={2} >
-                        <Button basic color="blue" onClick={this.search}>Create</Button>
+                        <Button basic color="blue" onClick={this.createClick}>Create</Button>
                     </Grid.Column>
                 </Grid>
                 <Card.Group itemsPerRow={4}>
@@ -47,6 +58,7 @@ class Books extends Component{
                         <Book book={item} />
                     ))}
                 </Card.Group>
+                <CreateBook open={this.state.open} newbook={this.state.newBook} save={this.saveBook} close={this.createClick} />
             </Segment>
          
                   
@@ -59,7 +71,7 @@ const mapStateToProps=({books})=>{
 }
 
 const mapDispatchToProps={
-    bookList
+    bookList,createBook
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Books);

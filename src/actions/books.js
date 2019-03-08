@@ -13,3 +13,12 @@ export function bookList(){
         });
     }
 }
+
+export function createBook(){
+    const fs=require("fs")
+    fs.writeFile("../../public/api/books.json",JSON.stringify("a:1"),(err)=>{
+        if(err)
+            console.log(err)
+        console.log("OK!")
+    })
+}
