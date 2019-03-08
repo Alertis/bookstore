@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Input, Button, Segment, Grid } from 'semantic-ui-react';
-import {bookList,createBook} from '../actions/books';
+import {bookList} from '../actions/books';
 import { connect } from 'react-redux';
 import Book from '../component/Book'
 import CreateBook from '../component/CreateBook';
@@ -71,7 +71,7 @@ const mapStateToProps=({books})=>{
 }
 
 const mapDispatchToProps={
-    bookList,createBook
+    bookList
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Books);

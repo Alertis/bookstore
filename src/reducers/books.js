@@ -1,4 +1,4 @@
-import {BOOK_LIST} from '../actions/books'
+import {BOOK_LIST,BOOK_DETAIL} from '../actions/books'
 
 const initialState={
     books:[]
@@ -7,6 +7,11 @@ const initialState={
 export default (state=initialState, {type,payload}) => {
     switch(type){
         case BOOK_LIST:
+            return{
+                ...state,
+                books:payload
+            };
+        case BOOK_DETAIL:
             return{
                 ...state,
                 books:payload

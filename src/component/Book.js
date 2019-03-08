@@ -7,7 +7,7 @@ class Book extends Component {
     }
     render(){
         return(
-            <Card>
+            <Card href={"/detail/"+this.state.book.isbn}>
                 <Image src={this.state.book.img} />
                 <Card.Content>
                 <Card.Header>{this.state.book.title}</Card.Header>
